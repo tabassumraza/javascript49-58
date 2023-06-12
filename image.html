@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <style>
+    #myParagraph {
+      font-size: 16px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="image-container"></div>
+
+  <div id="modal" class="modal-close">
+    <img id="modal-image" src="" alt="Modal Image">
+    <!-- Add additional content for the modal if needed -->
+    <button onclick="onClosedImagModal()">Close</button>
+  </div>
+
+  <p id="myParagraph">This is a sample paragraph.</p>
+  <button id="zoomInBtn">Zoom In (+)</button>
+  <button id="zoomOutBtn">Zoom Out (-)</button>
+
+  <script>
+    const paragraph = document.getElementById("myParagraph");
+    const zoomInBtn = document.getElementById("zoomInBtn");
+    const zoomOutBtn = document.getElementById("zoomOutBtn");
+
+    zoomInBtn.addEventListener("click", function () {
+      let fontSize = parseInt(window.getComputedStyle(paragraph).fontSize);
+      fontSize += 10;
+      paragraph.style.fontSize = fontSize + "px";
+    });
+
+    zoomOutBtn.addEventListener("click", function () {
+      let fontSize = parseInt(window.getComputedStyle(paragraph).fontSize);
+      fontSize -= 10;
+      paragraph.style.fontSize = fontSize + "px";
+    });
+  </script>
+
+
+  <script src="image.js">
+  </script>
+
+
+</body>
+</html>
